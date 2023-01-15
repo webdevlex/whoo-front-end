@@ -1,0 +1,85 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.hero {
+	@include justify-align-center-column;
+	padding: 30px;
+}
+
+.hero .container {
+	@include justify-align-center-column;
+	gap: 60px;
+}
+
+.hero-text-container {
+	max-width: 500px;
+}
+
+.button-container {
+	@include justify-center-row;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.sign-in {
+	background: $primary;
+}
+
+.sign-up {
+	color: $primary;
+	border: 2px solid $primary;
+}
+
+@media (min-width: 576px) {
+	.hero {
+		padding-block: 50px;
+	}
+}
+
+@media (min-width: 768px) {
+	.hero {
+		padding-block: 80px;
+	}
+}
+
+@media (min-width: 992px) {
+	.hero {
+		padding-inline: 40px;
+	}
+	.hero .container {
+		flex-direction: row;
+	}
+
+	.hero .home-page-heading {
+		text-align: left;
+	}
+
+	.hero .home-page-sub-heading {
+		font-size: 20px;
+		text-align: left;
+	}
+
+	.button-container {
+		justify-content: left;
+	}
+}
+
+@media (min-width: 1200px) {
+	.hero {
+		@include justify-align-center-column;
+		padding-block: 100px;
+	}
+
+	.hero .right {
+		flex: 2;
+	}
+
+	.hero .home-page-heading {
+		font-size: 60px;
+	}
+
+	.hero .home-page-sub-heading {
+		font-size: 20px;
+		margin-block: 40px;
+	}
+}

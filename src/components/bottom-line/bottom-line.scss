@@ -1,0 +1,17 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.bottom-line {
+	flex-direction: row;
+	width: 100%;
+	display: none;
+	flex-wrap: wrap;
+}
+
+@media (min-width: 769px) {
+	.bottom-line {
+		display: flex;
+		// margin-top: 20px;
+		flex-wrap: nowrap;
+	}
+}

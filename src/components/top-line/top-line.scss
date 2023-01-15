@@ -1,0 +1,91 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.top-line {
+	width: 100%;
+}
+
+.fullname-username-location {
+	display: flex;
+	flex-wrap: wrap;
+
+	width: 100%;
+	gap: 5px;
+}
+
+.fullname {
+	font-size: 30px;
+	line-height: 35px;
+	font-weight: 700;
+	color: $blue-100;
+	white-space: nowrap;
+	margin-right: 10px;
+}
+
+.user-label {
+	color: $primary;
+	font-size: 22px;
+	// margin-top: 8px;
+	font-weight: 500;
+}
+
+.username {
+	// margin-top: 8px;
+	font-size: 22px;
+	font-weight: 400;
+	color: $blue-500;
+	margin-right: auto;
+}
+
+.pin {
+	display: flex;
+	align-items: center;
+	height: fit-content;
+}
+
+.pin-icon {
+	color: $blue-500;
+	width: 20px;
+	height: 20px;
+	margin-right: 6px;
+	margin-bottom: 3px;
+}
+
+.location-text {
+	white-space: nowrap;
+	font-size: 22px;
+	font-weight: 500;
+	color: $blue-500;
+}
+
+@media (min-width: 576px) {
+	.fullname {
+		font-size: 35px;
+	}
+
+	.user-label {
+		font-size: 25px;
+	}
+
+	.username {
+		font-size: 20px;
+	}
+
+	.pin-icon {
+		font-size: 24px;
+	}
+}
+
+@media (min-width: 769px) {
+	.top-line {
+		margin-bottom: 0px;
+	}
+
+	.fullname {
+		line-height: 35px;
+	}
+
+	.username {
+		margin-top: 0;
+	}
+}

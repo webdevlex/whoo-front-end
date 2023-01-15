@@ -1,0 +1,9 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.messages-page {
+	display: flex;
+	height: calc(100vh - $navbar-height);
+	position: relative;
+	width: 100%;
+}

@@ -1,0 +1,6 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.education-form {
+	@include align-center-column;
+}

@@ -1,0 +1,6 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.volunteer-form {
+	@include align-center-column;
+}

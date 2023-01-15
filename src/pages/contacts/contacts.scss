@@ -1,0 +1,64 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.contacts-page {
+	@include align-center-column;
+	height: calc(100vh - 91px);
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-inline: auto;
+	width: 100%;
+	max-width: 900px;
+	padding-inline: 30px;
+}
+
+.contacts-page-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 16px;
+	width: 100%;
+	padding-bottom: 16px;
+	border-bottom: 1px solid $blue-800;
+}
+
+.contacts-page-title .title-text {
+	font-weight: 500;
+	font-size: 22px;
+	color: $blue-100;
+	margin-right: 20px;
+}
+
+.contacts-list {
+	@include center-elements-virtical;
+	width: 100%;
+}
+
+.no-contacts-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+.no-contacts-icon {
+	width: 40%;
+	opacity: 0.5;
+}
+
+.no-contacts-text {
+	font-size: 25px;
+	color: $blue-800;
+	margin-top: 20px;
+	text-align: center;
+	line-height: 30px;
+	opacity: 0.8;
+}
+
+@media (min-width: 567px) {
+	.contacts-page-title .title-text {
+		font-size: 32px;
+	}
+}

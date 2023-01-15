@@ -1,0 +1,12 @@
+@import '../../assets/styles/variables.scss';
+
+.on-change-search-bar-results-container {
+	position: absolute;
+	top: 56px;
+	width: 100%;
+	max-width: 400px;
+	border: 1px solid $blue-700;
+	border-radius: 5px;
+	box-shadow: 3px 3px 10px #ccc;
+	background-color: white;
+}

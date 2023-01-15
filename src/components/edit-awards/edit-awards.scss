@@ -1,0 +1,6 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.awards-form {
+	@include center-elements-virtical;
+}

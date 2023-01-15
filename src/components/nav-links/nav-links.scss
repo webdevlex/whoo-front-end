@@ -1,0 +1,124 @@
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/mixins.scss';
+
+.navbar-buttons-container {
+	@include fill-screen;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	border: none;
+	z-index: 2;
+	padding: 0;
+	background-color: white;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	a:first-of-type {
+		border-top: 1px solid $blue-900;
+	}
+}
+
+.nav-bars-icon {
+	width: 30px;
+	height: 30px;
+	color: $blue-100;
+	cursor: pointer;
+	outline: none;
+}
+
+.x-icon {
+	min-width: 50px;
+	min-height: 50px;
+	padding: 5px;
+	cursor: pointer;
+
+	color: $blue-300;
+
+	&:hover {
+		background-color: $blue-900;
+	}
+}
+
+.nav-link {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	font-size: 20px;
+	padding: 20px;
+	border-bottom: 1px solid $blue-900;
+	cursor: pointer;
+	text-decoration: none;
+	color: $blue-300;
+
+	&:hover {
+		border-bottom: 1px solid $primary;
+		background-color: $blue-900;
+	}
+}
+
+.nav-link .icon {
+	@include center-elements;
+	margin-right: 32px;
+	color: $blue-300;
+}
+
+.logout {
+	border: none;
+	background-color: white;
+	margin-top: auto;
+	border-top: 1px solid $blue-900;
+	border-bottom: none !important;
+}
+
+.menu-link-text {
+	white-space: nowrap;
+	pointer-events: none;
+}
+
+@media (min-width: 576px) {
+	.navbar-buttons-container {
+		position: static;
+		flex-direction: row;
+		background-color: transparent;
+		width: fit-content;
+	}
+
+	.nav-link {
+		width: auto;
+		border: none !important;
+		padding: 12px 12px;
+		text-transform: uppercase;
+		color: $blue-300;
+
+		border-radius: 5px;
+		margin-right: 5px;
+		background-color: $blue-900;
+	}
+
+	.menu-link-text {
+		display: none;
+	}
+
+	.nav-link .icon {
+		margin: 0;
+		font-size: 18px;
+	}
+}
+
+@media (min-width: 996px) {
+	.nav-link {
+		background-color: white;
+		padding: 8px 12px;
+		font-size: 12px;
+	}
+
+	.menu-link-text {
+		display: block;
+	}
+
+	.nav-link .icon {
+		margin-right: 10px;
+		font-size: 12px;
+	}
+}

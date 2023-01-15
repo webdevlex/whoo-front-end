@@ -1,0 +1,18 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+// Rest of styling in real-threads.scss
+
+.cancel-new-message-button {
+	@include justify-align-center-row;
+	background-color: transparent;
+	border: none;
+	padding: 10px;
+
+	color: $blue-700;
+	cursor: pointer;
+
+	&:hover {
+		color: $red;
+	}
+}

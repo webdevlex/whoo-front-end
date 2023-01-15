@@ -1,0 +1,133 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.work-container {
+	width: 100%;
+}
+
+.side-list-container {
+	border-bottom: 1px solid $blue-800;
+}
+
+.side-list-container .sub-section {
+	padding: 20px;
+	border-radius: 0;
+	background-color: $blue-900;
+}
+
+.text-line-text {
+	font-weight: 700;
+	font-size: 20px;
+	color: $blue-100;
+	display: none;
+	align-items: center;
+
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 100%;
+		border-bottom: 1px solid $blue-700;
+		margin-left: 10px;
+	}
+}
+
+.side-list {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	margin: 0;
+	padding: 0;
+}
+
+.side-list-item {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	padding: 15px;
+	border-radius: 10px;
+	width: 100%;
+	list-style-type: none;
+	box-shadow: 8px 10px 8px rgba(0, 0, 0, 0.05);
+}
+
+.top-line-wrapper {
+	@include space-elements;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.side-info-primary-text {
+	font-size: 18px;
+	font-weight: 700;
+	color: $blue-100;
+}
+
+.side-info-secondary-text {
+	font-size: 16px;
+	font-weight: 600;
+	color: $blue-400;
+}
+
+.date-text {
+	font-size: 16px;
+	color: $blue-500;
+}
+
+.website-text {
+	font-size: 16px;
+	color: $primary;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.rank-text {
+	color: $primary;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 4px 10px;
+	background-color: $secondary;
+	border-radius: 5px;
+	white-space: nowrap;
+}
+
+@media (min-width: 576px) {
+	.side-list-container .sub-section {
+		padding: 30px;
+	}
+
+	.side-list-item {
+		padding: 20px;
+	}
+}
+
+@media (min-width: 769px) {
+	.side-list-container {
+		border-bottom: none;
+		gap: 25px;
+	}
+
+	.text-line-text {
+		display: flex;
+	}
+
+	.side-list-container .mobile-revealer-wrapper {
+		max-height: 100%;
+	}
+
+	.side-list-container .sub-section {
+		background-color: white;
+		padding: 30px;
+	}
+
+	.side-list-item {
+		padding: 0;
+		box-shadow: none;
+		border-radius: 0;
+	}
+}
+
+@media (min-width: 1500px) {
+	.side-list-container .sub-section {
+		padding: 20px;
+	}
+}

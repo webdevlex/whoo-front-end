@@ -1,0 +1,54 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.sign-up-page {
+	@include justify-align-center-column;
+	height: calc(100vh - $navbar-height);
+}
+
+.sign-up-container {
+	@include justify-align-center-column;
+	border-radius: 10px;
+	padding: 40px;
+	max-width: 400px;
+	width: 100%;
+}
+
+.sign-up-logo {
+	width: 150px;
+	height: 68px;
+}
+
+.sign-up-title {
+	color: $blue-100;
+	font-weight: 500;
+	text-align: center;
+	margin-top: 16px;
+}
+
+.sign-up-sub-title {
+	color: $blue-300;
+	font-weight: 300;
+	text-align: center;
+}
+
+.have-account-text {
+	text-align: center;
+	font-size: 14px;
+	color: $blue-300;
+	line-height: 25px;
+}
+
+.have-account-text .link {
+	text-decoration: none;
+	color: $primary;
+	cursor: pointer;
+	white-space: nowrap;
+	font-size: 14px;
+}
+
+@media (min-width: 576px) {
+	.sign-up-container {
+		border: 1px solid #ddd;
+	}
+}

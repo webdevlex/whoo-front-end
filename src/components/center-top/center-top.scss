@@ -1,0 +1,31 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.center-top-line {
+}
+
+.skills-list-title {
+	font-size: 18px;
+	font-weight: 700;
+	color: $blue-100;
+	margin-bottom: 5px;
+	margin-top: 20px;
+}
+
+.skills-list-container {
+	@include align-center-row;
+	margin: 0;
+	padding: 0;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.skills-list-item {
+	background-color: $primary;
+	width: fit-content;
+	font-size: 14px;
+	padding: 8px 20px;
+	border-radius: 10px;
+	color: white;
+	list-style-type: none;
+}

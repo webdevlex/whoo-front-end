@@ -1,0 +1,16 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.tools-info-line {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+
+.tool {
+	background-color: $primary;
+	width: fit-content;
+	padding: 3px 10px;
+	border-radius: 5px;
+	color: white;
+}

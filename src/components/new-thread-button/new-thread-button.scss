@@ -1,0 +1,94 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.new-message-button {
+	@include center-elements;
+	padding: 5px 10px;
+	border-radius: 5px;
+	color: white;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+	background-color: $primary;
+	position: relative;
+	white-space: nowrap;
+
+	&:hover {
+		.tool-tip {
+			display: block;
+		}
+	}
+}
+
+.new-thread-dropdown {
+	right: 20px;
+	top: 65px;
+	@include align-center-column;
+	position: absolute;
+	width: 90%;
+	height: fit-content;
+	background-color: white;
+	border: 1px solid $blue-800;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+	z-index: 2;
+}
+
+.new-thread-dropdown .search-bar {
+	@include center-elements-horizontal;
+	width: 90%;
+	align-items: center;
+	background-color: white;
+	padding: 0.5rem;
+	box-sizing: border-box;
+	border-radius: 10px;
+	border: 1px solid $blue-800;
+	margin: 1rem 0;
+}
+
+.new-thread-dropdown .icon {
+	width: 20px;
+	height: 20px;
+	margin-inline: 8px;
+	color: $blue-800;
+}
+
+.new-thread-dropdown .input {
+	width: 100%;
+	font-size: 1rem;
+	font-family: inherit;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	color: $blue-500;
+}
+
+.dropdown-profile {
+	display: flex;
+	align-items: center;
+	padding: 19px;
+	box-sizing: border-box;
+	cursor: pointer;
+	background-color: white;
+	border: none;
+	border-top: 1px solid $blue-800;
+	width: 100%;
+
+	&:hover {
+		background-color: $blue-1000;
+	}
+}
+.dropdown-profile .img-container {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.dropdown-profile .profile-name {
+	margin-left: 1rem;
+	font-size: 1rem;
+	color: $blue-100;
+	font-weight: 500;
+	pointer-events: none;
+}

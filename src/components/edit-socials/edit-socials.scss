@@ -1,0 +1,6 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.socials-form {
+	@include align-center-column;
+}

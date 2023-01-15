@@ -1,0 +1,48 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.info-line {
+}
+
+.info-line .address-container {
+}
+
+.info-line-title {
+	font-weight: 700;
+	color: $blue-100;
+	margin-right: 10px;
+	font-size: 18px;
+}
+
+.info-line-user-info {
+	font-size: 16px;
+	color: $blue-500;
+}
+
+.info-line .color {
+	color: $primary;
+}
+
+.email {
+	text-decoration: none;
+}
+
+@media (min-width: 576px) {
+	.info-line-title {
+		font-size: 19px;
+	}
+
+	.info-line-user-info {
+		font-size: 17px;
+	}
+}
+
+@media (min-width: 996px) {
+	.info-line-title {
+		font-size: 20px;
+	}
+
+	.info-line-user-info {
+		font-size: 18px;
+	}
+}

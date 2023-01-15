@@ -1,0 +1,24 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.double-input {
+	@include center-elements-horizontal;
+	@include space-elements;
+	@include wrap-content;
+	width: 100%;
+
+	.input-container {
+		width: 49%;
+	}
+
+	.nested-double-input {
+		@include center-elements-horizontal;
+		@include space-elements;
+		width: 49%;
+		flex-wrap: wrap;
+
+		.input-container {
+			width: 48%;
+		}
+	}
+}

@@ -1,0 +1,34 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.conversations-container {
+	@include justify-align-center-column;
+	height: 100%;
+	width: 100%;
+	background-color: $blue-1000;
+	position: relative;
+	overflow: hidden;
+}
+
+.no-conversation-container {
+	padding: 40px;
+}
+
+.no-conversation-icon {
+	width: 300px;
+	height: fit-content;
+	opacity: 0.5;
+}
+
+.no-conversation-selected-text {
+	line-height: 30px;
+	text-align: center;
+	margin-top: 20px;
+	font-size: 25px;
+	color: $blue-800;
+	opacity: 0.7;
+}
+
+.conversation-input-parent {
+	height: 65px;
+}

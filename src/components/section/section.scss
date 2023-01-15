@@ -1,0 +1,88 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.section .container {
+	@include align-center-column;
+	padding-inline: 40px;
+	margin-block: 40px;
+}
+
+.section .section-image {
+	@include align-center-row;
+	width: 100%;
+}
+
+.section-img {
+	width: 100%;
+}
+
+.section .section-text {
+	margin-top: 40px;
+	width: 100%;
+}
+
+.section .home-page-heading,
+.section .home-page-sub-heading {
+	text-align: left;
+}
+
+.section-list {
+	margin-block: 40px;
+	padding: 0;
+}
+
+.check-icon {
+	color: $primary;
+	margin-right: 15px;
+}
+
+.list-item {
+	@include align-center-row;
+	text-decoration: none;
+	margin-block: 10px;
+	list-style: none;
+	color: $blue-100;
+	display: flex;
+}
+
+@media (min-width: 576px) {
+	.list-item {
+		font-size: 18px;
+	}
+}
+
+@media (min-width: 768px) {
+	.section .container {
+		flex-direction: row;
+		margin-bottom: 100px;
+	}
+
+	.section-img {
+		margin-left: 0;
+		margin-right: 80px;
+	}
+
+	.section .section-image {
+		width: 100%;
+		display: flex;
+		align-items: center;
+	}
+
+	.section .section-text {
+		margin-top: 0px;
+		margin-left: 40px;
+	}
+
+	.list-item {
+		font-size: 14px;
+	}
+}
+
+@media (min-width: 992px) {
+	.section .container {
+		margin-bottom: 150px;
+	}
+	.list-item {
+		font-size: 18px;
+	}
+}

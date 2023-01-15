@@ -1,0 +1,115 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.profile-tab {
+	@include align-center-row;
+	flex-wrap: wrap;
+	border: none;
+	background-color: white;
+	color: $blue-500;
+	cursor: pointer;
+	user-select: none;
+	width: 100%;
+	padding: 18px 20px;
+}
+
+.selected-tab {
+	border-bottom: none !important;
+	color: $primary;
+}
+
+.profile-tab .btn-text {
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.profile-tab .icon {
+	height: 16px;
+	max-width: 16px;
+	width: 16px;
+	margin-right: 16px;
+}
+
+.arrow-icon {
+	margin-left: auto;
+}
+
+.up-arrow {
+	color: $primary;
+}
+
+@media (min-width: 576px) {
+	.profile-tab .btn-text {
+		font-size: 18px;
+	}
+
+	.profile-tab .icon {
+		height: 18px;
+		width: 18px;
+		max-width: 18px;
+	}
+
+	.profile-tab {
+		padding: 25px 20px;
+	}
+}
+
+@media (min-width: 769px) {
+	.profile-tab {
+		@include justify-align-center-row;
+		padding: 15px 0px;
+		width: 100%;
+		max-width: 200px;
+		flex-wrap: nowrap;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-bottom: 1px solid $blue-500;
+		border: 1px solid $blue-900;
+
+		&:hover {
+			background-color: $blue-900;
+		}
+	}
+
+	.selected-tab {
+		background-color: $blue-900;
+	}
+
+	.selected-tab .icon {
+		color: $primary;
+	}
+
+	.profile-tab .btn-text {
+		font-size: 14px;
+		display: none;
+	}
+
+	.profile-tab .icon {
+		margin: 0;
+	}
+
+	.up-arrow,
+	.arrow-icon {
+		display: none;
+	}
+}
+
+@media (min-width: 1200px) {
+	.profile-tab {
+		flex-wrap: wrap;
+		padding: 15px 5px;
+	}
+
+	.profile-tab .btn-text {
+		display: block;
+		font-size: 12px;
+	}
+
+	.profile-tab .btn-text {
+		font-size: 12px;
+	}
+
+	.profile-tab .icon {
+		margin-right: 10px;
+	}
+}

@@ -1,0 +1,30 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.thread-title {
+	@include space-elements;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 16px;
+	border-bottom: 1px solid $blue-700;
+	min-height: 80px;
+	transition: all 0.5s;
+}
+
+.hide-title {
+	overflow: hidden;
+	padding: 0;
+}
+
+.left-title .title {
+	font-size: 22px;
+	white-space: nowrap;
+	color: $blue-100;
+	font-weight: 500;
+	margin-right: 10px;
+}
+
+.right-title {
+	@include align-center-column;
+}

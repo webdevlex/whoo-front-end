@@ -1,0 +1,37 @@
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/mixins.scss';
+
+.navbar {
+	padding-inline: 30px;
+	height: $navbar-height;
+}
+
+.navbar .container {
+	@include align-center-row;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	border-bottom: $navbar-line;
+	z-index: 1;
+	padding-block: 15px;
+	margin-inline: auto;
+	background-color: transparent;
+}
+
+.navbar .logo {
+	display: flex;
+	min-width: 90px;
+	max-width: 90px;
+}
+
+.full-width {
+	margin: 0;
+	padding: 0;
+
+	.container {
+		width: 100%;
+		margin: 0;
+		max-width: none;
+		padding-inline: 20px;
+	}
+}

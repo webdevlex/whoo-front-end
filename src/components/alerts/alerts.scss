@@ -1,0 +1,43 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.alert-container {
+	@include wrap-content;
+}
+
+.profile-alert {
+	@include wrap-content;
+	@include center-elements;
+	font-size: 1.2rem;
+	color: rgb(0, 180, 0);
+	margin-right: 1rem;
+	animation: fadeinout 2s linear forwards;
+	opacity: 0;
+}
+
+.error-alert {
+	@include wrap-content;
+	@include center-elements;
+	font-size: 1.2rem;
+	color: red;
+	margin-right: 1rem;
+	animation: fadeinout 2s linear forwards;
+	opacity: 0;
+}
+
+.alert-container .icon {
+	font-size: 22px;
+	margin-left: 16px;
+}
+
+@keyframes fadeinout {
+	0% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

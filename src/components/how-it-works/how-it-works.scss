@@ -1,0 +1,59 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.how-it-works-section {
+	@include justify-align-center-column;
+	padding-block: 60px;
+	padding-inline: 30px;
+	background-color: $blue-900;
+}
+
+.steps-container {
+	@include justify-center-row;
+	margin-top: 20px;
+	flex-wrap: wrap;
+}
+
+.step {
+	@include justify-align-center-column;
+	flex: 1;
+	text-align: center;
+	min-height: 250px;
+	min-width: 200px;
+	max-width: 400px;
+}
+
+.step-icon {
+	color: $primary;
+	height: 50px;
+	width: 50px;
+}
+
+.step-title {
+	font-size: 25px;
+	font-weight: 600;
+	margin-block: 20px;
+	color: $blue-100;
+	white-space: nowrap;
+}
+
+.step-desc {
+	color: $blue-300;
+}
+
+@media (min-width: 576px) {
+	.how-it-works-section {
+		padding-block: 80px;
+		padding-inline: 40px;
+	}
+
+	.steps-container {
+		gap: 40px;
+	}
+}
+
+@media (min-width: 992px) {
+	.step-desc {
+		font-size: 18px;
+	}
+}

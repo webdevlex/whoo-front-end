@@ -1,0 +1,49 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.conversation-title {
+	@include align-center-row;
+	width: 100%;
+	padding-inline: 20px;
+	min-height: 80px;
+	border-bottom: 1px solid $blue-700;
+	box-sizing: border-box;
+	background-color: white;
+}
+
+.title-left {
+	display: flex;
+	align-items: center;
+}
+
+.recipient-text {
+	color: $blue-500;
+}
+
+.img-container {
+	width: 30px;
+	height: 30px;
+	margin-left: 0.5rem;
+	border-radius: 50px;
+	overflow: hidden;
+
+	&:last-child {
+		margin-right: 10px;
+	}
+}
+
+.title-right {
+	@include center-elements-virtical;
+}
+
+.new-recipient-button {
+	@include wrap-content;
+	padding: 0.6rem;
+	border-radius: 50px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+
+	.icon {
+		color: #ccc;
+	}
+}

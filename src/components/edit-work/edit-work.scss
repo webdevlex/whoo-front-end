@@ -1,0 +1,6 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.work-form {
+	@include align-center-column;
+}

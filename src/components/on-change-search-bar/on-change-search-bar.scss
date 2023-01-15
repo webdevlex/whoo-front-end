@@ -1,0 +1,50 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.on-change-search-bar {
+	@include justify-align-center-row;
+	padding: 5px;
+	border-radius: 50px;
+	border: 1px solid $blue-700;
+	max-width: 450px;
+	width: 100%;
+	background-color: white;
+	position: relative;
+	margin-inline: auto;
+}
+
+.magnifying-glass-icon {
+	margin-inline: 16px;
+	font-size: 25px;
+	color: $blue-600;
+}
+
+.on-change-search-bar-form {
+	@include justify-align-center-row;
+	width: 100%;
+}
+
+.search-bar-input {
+	padding: 0;
+	width: 100%;
+	height: 40px;
+	color: $blue-300;
+	font-size: 20px;
+	border: none;
+	outline: none;
+}
+
+.search-bar-submit-button {
+	@include justify-align-center-row;
+	min-height: 45px;
+	min-width: 45px;
+	background-color: $primary;
+	border-radius: 50px;
+	cursor: pointer;
+	border: none;
+}
+
+.arrow-pointing-right-icon {
+	font-size: 25px;
+	color: white;
+}

@@ -1,0 +1,168 @@
+{
+    "user": "",
+    "basics": {
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "username": "BigBoyJonny",
+      "label": "Programmer",
+      "picture": "test",
+      "email": "john@gmail.com",
+      "phone": "(912) 555-4321",
+      "website": "www.johndoe.com",
+      "summary": "A summary of John Doe...",
+      "location": {
+        "address": "2712 Broadway St",
+        "postalCode": "94115",
+        "city": "San Francisco",
+        "countryCode": "US",
+        "region": "California"
+      },
+      "profiles": [{
+        "network": "Twitter",
+        "username": "jjTwit",
+        "url": "www.twitter.com/jjTwit"
+      },{
+        "network": "Facebook",
+        "username": "johnnyBoy",
+        "url": "www.facebook.com/johnnyBoy"
+      },{
+        "network": "MySpace",
+        "username": "BigBoyJonny",
+        "url": "www.myspace.com/BigBoyJonny"
+      }]
+    },
+    "work": [{
+      "company": "Spotify New York",
+      "position": "President",
+      "rank" : "Primary",
+      "website": "www.spotify.com",
+      "startDate": "2013-01-01",
+      "endDate": "2014-01-01",
+      "summary": "Description...",
+      "highlights": [
+        "Started the company",
+        "Created a company",
+        "Worked at my company"
+      ]
+    },{
+      "company": "Pinterest",
+      "position": "Programmer",
+      "rank" : "Secondary",
+      "website": "www.pinterest.com",
+      "startDate": "2010-01-01",
+      "endDate": "2012-01-01",
+      "summary": "Description...",
+      "highlights": [
+        "Started the company",
+        "Created a company",
+        "Worked at my company"
+      ]
+    }],
+    "volunteer": [{
+      "organization": "Organization",
+      "position": "Volunteer",
+      "website": "www.organization.com",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description...",
+      "highlights": [
+        "Awarded: Volunteer of the Month", "Worked with greate people", "yes"
+      ]
+    }],
+    "education": [{
+      "institution": "Stanford",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "2011-01-01",
+      "endDate": "2013-01-01",
+      "gpa": "4.0",
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    },{
+      "institution": "Orange Coast College",
+      "area": "Computer Science",
+      "studyType": "Associate",
+      "startDate": "2014-01-01",
+      "endDate": "2020-01-01",
+      "gpa": "4.0",
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    }],
+    "awards": [{
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "website" : "www.company.com",
+      "summary": "Test test test test test test test test okay cool its on another line"
+    },{
+      "title": "Cool Guy Award",
+      "date": "2012-11-01",
+      "awarder": "Cool Guy Company",
+      "website" : "www.company.com",
+      "summary": "There is spoons."
+    }],
+    "publications": [{
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "website": "www.publication.com",
+      "summary": "Test test test test test test test test okay cool its on another line"
+    },{
+      "name": "Cool Guy Publication",
+      "publisher": "Cool Guy Company",
+      "releaseDate": "2014-10-01",
+      "website": "www.publication.com",
+      "summary": "Description..."
+    }],
+    "skills":[
+        "HTML",
+        "CSS",
+        "Javascript",
+        "React",
+        "NodeJS",
+        "Express",
+        "Nginx"
+      ],
+    "languages": [{
+      "language": "English",
+      "fluency": "Native speaker"
+    },{
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "Japanese",
+      "fluency": "Intermediate"
+    }],
+    "interests": [{
+      "name": "Wildlife",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    },{
+      "name": "Programming",
+      "keywords": [
+        "React",
+        "HTML",
+        "CSS"
+      ]
+    }],
+    "references": [{
+      "name": "Jane Doe",
+      "phone" :"(912) 555-4321",
+      "email" :"john@gmail.com",
+      "url" : "www.whoo.com/jane-doe",
+      "reference": "Reference..."
+    },{
+      "name": "John Doe",
+      "phone" :"(912) 555-4321",
+      "email" :"john@gmail.com",
+      "url" : "www.whoo.com/jane-doe",
+      "reference": "Reference..."
+    }]
+  
+  }
+  

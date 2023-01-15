@@ -1,0 +1,61 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.sign-in-form {
+	@include center-elements-virtical;
+	width: 100%;
+	margin-block: 40px;
+}
+
+.sign-in-form .input {
+	width: 100%;
+	height: 46px;
+	border: 1px solid $blue-800;
+	color: $blue-300;
+	padding-inline: 8px;
+	border-radius: 5px;
+	outline: none;
+
+	&:focus {
+		border: 1px solid $primary;
+	}
+}
+
+.sign-in-form .email-input {
+	margin-bottom: 10px;
+}
+
+.password-input {
+	@include justify-align-center-row;
+	width: 100%;
+	position: relative;
+	margin-bottom: 8px;
+}
+
+.see-password-button {
+	position: absolute;
+	right: 0;
+	width: 40px;
+	height: 40px;
+	padding: 8px;
+	color: $blue-700;
+	cursor: pointer;
+}
+
+.sign-in-button {
+	width: 100%;
+	height: 50px;
+	margin-top: 16px;
+	background-color: $primary;
+	color: white;
+	font-family: inherit;
+	font-weight: 500;
+	border: none;
+	border-radius: 50px;
+	outline: none;
+	cursor: pointer;
+}
+
+.sign-in-form [aria-invalid='true'] {
+	border: solid 1px $red;
+}

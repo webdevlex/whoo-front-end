@@ -1,0 +1,82 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.thread,
+.temp-thread {
+	@include space-elements;
+	align-items: center;
+	width: 100%;
+	padding: 16px;
+	border: none;
+	border-bottom: 1px solid $blue-800;
+	cursor: pointer;
+	background-color: white;
+	overflow: hidden;
+
+	&:hover {
+		background-color: $blue-1000;
+	}
+}
+
+.thread .left,
+.temp-thread .left {
+	@include justify-align-center-row;
+	display: flex;
+	align-items: center;
+	pointer-events: none;
+	height: 50px;
+	margin-right: 10px;
+}
+
+.thread .recipient-imgs,
+.temp-thread .recipient-imgs {
+	@include justify-align-center-row;
+	align-self: flex-start;
+	position: relative;
+	z-index: 1;
+}
+
+.thread .recipient-img,
+.temp-thread .recipient-img {
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+}
+
+.thread .recipient-name,
+.temp-thread .recipient-name {
+	white-space: nowrap;
+	font-weight: 500;
+}
+
+.thread .right,
+.temp-thread .right {
+	@include align-center-row;
+	pointer-events: none;
+}
+
+.temp-thread .right {
+	pointer-events: all;
+}
+
+.thread-timestamp-wrapper {
+	display: flex;
+	flex-direction: column;
+	color: $blue-600;
+	font-size: 12px;
+}
+
+.thread-timestamp {
+	white-space: nowrap;
+	width: fit-content;
+	margin-left: auto;
+}
+
+@media (min-width: 769px) {
+	.thread-timestamp-wrapper {
+		font-size: 14px;
+	}
+}

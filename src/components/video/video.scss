@@ -1,0 +1,42 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.video-section {
+	@include center-elements-horizontal;
+	padding-block: 40px;
+	padding-inline: 40px;
+	max-width: 1300px;
+}
+
+.iframe-container {
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%;
+	height: 0;
+}
+
+.iframe-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@media (min-width: 576px) {
+	.video-section {
+		padding-block: 60px;
+	}
+}
+
+@media (min-width: 768px) {
+	.video-section {
+		padding-block: 80px;
+	}
+}
+
+@media (min-width: 992px) {
+	.video-section {
+		padding-block: 100px;
+	}
+}

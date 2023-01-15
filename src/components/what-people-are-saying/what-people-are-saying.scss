@@ -1,0 +1,127 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.what-people-are-saying-section {
+}
+
+.section .what-people-are-saying-contianer {
+	@include justify-align-center-column;
+	margin-bottom: 100px;
+}
+
+.what-people-are-saying-contianer .home-page-heading {
+	text-align: center;
+}
+
+.all-quotes-container {
+	@include justify-align-center-column;
+	gap: 60px;
+	margin-top: 60px;
+}
+
+.user-quote-container {
+	@include justify-align-center-column;
+	display: flex;
+	max-width: 800px;
+	width: 100%;
+	margin-inline: auto;
+}
+
+.quote-image-wrapper {
+	@include justify-align-center-row;
+	width: 150px;
+	height: 150px;
+	min-width: 150px;
+	min-height: 150px;
+	border-radius: 100%;
+	position: relative;
+	overflow: hidden;
+	margin-inline: auto;
+}
+
+.quote-image {
+	object-fit: cover;
+	position: absolute;
+	height: 100%;
+}
+
+.quote-container {
+	@include justify-center-column;
+	margin-top: 20px;
+}
+
+.quote-icon {
+	color: $blue-100;
+}
+
+.quote {
+	color: $blue-300;
+}
+
+.quoter {
+	margin-top: 20px;
+}
+
+.quoter-name {
+	color: $primary;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.quoter-title {
+	color: $blue-500;
+	font-size: 14px;
+}
+
+@media (min-width: 576px) {
+	.section .what-people-are-saying-contianer {
+		margin-bottom: 150px;
+	}
+
+	.quote {
+		font-size: 18px;
+	}
+
+	.quoter-name {
+		font-size: 18px;
+	}
+
+	.quoter-title {
+		font-size: 16px;
+	}
+}
+
+@media (min-width: 769px) {
+	.all-quotes-container {
+		gap: 120px;
+	}
+
+	.user-quote-container {
+		flex-direction: row;
+	}
+
+	.reverse {
+		flex-direction: row-reverse;
+	}
+
+	.quote-image-wrapper {
+		@include justify-align-center-row;
+		width: 200px;
+		height: 200px;
+		min-width: 200px;
+		min-height: 200px;
+		margin-right: 40px;
+	}
+
+	.quote {
+		font-size: 20px;
+	}
+
+	.reverse .quote-image-wrapper {
+		margin-right: 0;
+	}
+
+	.reverse .quote {
+		margin-right: 40px;
+	}
+}

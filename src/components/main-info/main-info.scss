@@ -1,0 +1,25 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.main-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	border-bottom: 1px solid $blue-800;
+	padding: 30px;
+}
+
+@media (min-width: 576px) {
+	.main-info {
+		padding: 30px 50px 50px 50px;
+	}
+}
+
+@media (min-width: 769px) {
+	.main-info {
+		border-bottom: none;
+		padding: 30px 30px 0px 30px;
+		// min-height: 350px;
+	}
+}

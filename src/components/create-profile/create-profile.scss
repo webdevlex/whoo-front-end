@@ -1,0 +1,30 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.create-profile {
+	@include center-elements-virtical;
+	width: 100%;
+	height: 100%;
+	padding-inline: 40px;
+}
+
+.create-profile-title-container {
+	margin: 2rem 0;
+	margin-bottom: 3rem;
+	background-color: antiquewhite;
+}
+
+.create-profile-title {
+	color: #444;
+}
+
+.create-profile-form {
+	@include center-elements-virtical;
+	width: 100%;
+}
+
+@media (min-width: 996px) {
+	.create-profile-form {
+		width: 60%;
+	}
+}

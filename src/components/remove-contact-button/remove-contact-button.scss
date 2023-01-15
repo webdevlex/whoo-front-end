@@ -1,0 +1,33 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.remove-contact-button {
+	@include justify-align-center-row;
+	border: none;
+	cursor: pointer;
+	font-weight: 500;
+	width: fit-content;
+	min-width: 40px;
+	height: 40px;
+	background-color: transparent;
+	color: $blue-200;
+
+	&:hover {
+		color: $red;
+	}
+}
+
+.profile-page .remove-contact-button {
+	border-radius: 5px;
+	background-color: $blue-900;
+	padding: 5px 15px;
+
+	&:hover {
+		background-color: $blue-800;
+	}
+}
+
+.remove-contact-button-text {
+	margin-right: 10px;
+	color: $blue-300;
+}

@@ -1,0 +1,20 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.add-fields-button {
+	@include wrap-content;
+	@include center-elements;
+	align-self: flex-end;
+	background-color: $primary;
+	border: none;
+	cursor: pointer;
+	padding: 0.5rem;
+	border-radius: 50px;
+
+	.plus-icon {
+		@include wrap-content;
+		width: 25px;
+		height: 25px;
+		color: white;
+	}
+}

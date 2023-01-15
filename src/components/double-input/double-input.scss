@@ -1,0 +1,9 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.double-input {
+	@include center-elements-horizontal;
+	@include space-elements;
+	@include wrap-content;
+	width: 100%;
+}

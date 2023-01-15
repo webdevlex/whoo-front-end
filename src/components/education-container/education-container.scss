@@ -1,0 +1,29 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.education-container {
+	width: 100%;
+}
+
+.education-container .sub-section {
+	padding: 30px;
+	background-color: $blue-900;
+}
+
+.institution-text {
+	font-size: 1rem;
+	font-weight: 600;
+	color: #444;
+}
+
+.area-text {
+	font-weight: 500;
+	font-size: 0.8rem;
+	color: $primary;
+}
+
+@media (min-width: 769px) {
+	.education-container .mobile-revealer-wrapper {
+		max-height: 100%;
+	}
+}

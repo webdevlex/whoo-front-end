@@ -1,0 +1,30 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.contacts-search-bar {
+	@include center-elements;
+	background-color: white;
+	padding: 8px;
+	border-radius: 10px;
+	border: 1px solid $blue-800;
+	margin: 0;
+	width: 100%;
+	max-width: 300px;
+}
+
+.contacts-search-bar .search-icon {
+	margin: 0 10px 0 5px;
+	min-width: 16px;
+	min-height: 16px;
+	color: $blue-700;
+}
+
+.contacts-search-input {
+	@include center-elements;
+	padding: 0;
+	width: 100%;
+	color: $blue-500;
+	font-size: 18px;
+	border: 0px solid;
+	outline: none;
+}

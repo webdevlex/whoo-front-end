@@ -1,0 +1,48 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.alerts-submit-container {
+	@include justify-align-center-row;
+}
+
+.lds-spinner {
+	margin-top: 0;
+	height: 50px;
+	transform: scale(0.4);
+	position: fixed;
+}
+
+.edit-section-title-buttons-wrapper {
+	@include justify-align-center-row;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.not-now-link {
+	@include justify-align-center-row;
+	color: $blue-700;
+	font-size: 1rem;
+	font-family: inherit;
+	font-weight: 500;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.save-button {
+	@include wrap-content;
+	box-sizing: border-box;
+	align-self: flex-end;
+	padding: 10px 20px;
+	background-color: $primary;
+	color: white;
+	font-size: 1rem;
+	font-family: inherit;
+	font-weight: 500;
+	border: none;
+	border-radius: 100px;
+	outline: none;
+	cursor: pointer;
+}

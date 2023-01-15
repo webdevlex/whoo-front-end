@@ -1,0 +1,19 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.alert {
+	@include center-elements;
+	@include wrap-content;
+	width: 100%;
+	font-size: 0.8rem;
+
+	.icon {
+		@include wrap-content;
+		font-size: 1rem;
+		margin-right: 0.5rem;
+	}
+}
+
+.error {
+	color: red;
+}

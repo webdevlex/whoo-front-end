@@ -1,0 +1,71 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.members-dropdown-container {
+	@include justify-center-column;
+	position: relative;
+}
+
+.members-dropdown-button {
+	@include justify-align-center-row;
+	background-color: white;
+	border: none;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	color: $blue-100;
+	border-radius: 5px;
+	margin-right: 5px;
+
+	&:hover {
+		background-color: $blue-900;
+	}
+}
+
+.members-dropdown {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	height: fit-content;
+	background-color: white;
+	border: 1px solid $blue-700;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+	top: 30px;
+	left: -10px;
+	width: 300px;
+}
+
+.member {
+	@include align-center-row;
+	padding: 15px;
+	border-bottom: 1px solid $blue-700;
+	text-decoration: none;
+	background-color: white;
+	overflow: hidden;
+	width: 100%;
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	&:hover {
+		background-color: $blue-1000;
+	}
+}
+
+.member-img-container {
+	min-width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	margin-right: 16px;
+	overflow: hidden;
+}
+
+.member-fullname {
+	color: $primary;
+	font-weight: 600;
+}
+
+.member-username {
+	color: $blue-500;
+}

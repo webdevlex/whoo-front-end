@@ -1,0 +1,48 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.threads {
+	display: flex;
+	width: 0px;
+	position: absolute;
+	transition: 0.5s;
+	height: 100%;
+}
+
+.threads-menu-open {
+	width: 100%;
+}
+
+.title-and-threads-container {
+	@include align-center-column;
+	background-color: white;
+	width: 100%;
+	height: 100%;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+	z-index: 1;
+	overflow: hidden;
+}
+
+.threads-container {
+	width: 100%;
+	height: calc(100% - 80px);
+	overflow-y: auto;
+}
+
+.title-and-threads-container .selected {
+	border-bottom: 1px solid $primary !important;
+}
+
+@media (min-width: 576px) {
+	.threads {
+		min-width: 300px;
+		position: relative;
+		transition: none;
+	}
+}
+
+@media (min-width: 769px) {
+	.threads {
+		min-width: 450px;
+	}
+}

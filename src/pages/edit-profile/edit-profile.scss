@@ -1,0 +1,14 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.edit-profile-page {
+	height: calc(100vh - $navbar-height);
+	position: relative;
+	display: flex;
+	background-color: $blue-1000;
+}
+
+.inputs-container {
+	@include align-center-column;
+	width: 100%;
+}

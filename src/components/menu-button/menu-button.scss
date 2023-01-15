@@ -1,0 +1,77 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.nav-link {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	font-size: 20px;
+	padding: 20px;
+	border-bottom: 1px solid $blue-900;
+	cursor: pointer;
+	text-decoration: none;
+	color: $blue-300;
+
+	&:hover {
+		border-bottom: 1px solid $primary;
+		background-color: $blue-900;
+	}
+}
+
+.nav-link .icon {
+	@include center-elements;
+	margin-right: 32px;
+	color: $blue-300;
+}
+
+.logout {
+	margin-top: auto;
+	border-top: 1px solid $blue-900;
+	border-bottom: none !important;
+}
+
+.menu-link-text {
+	white-space: nowrap;
+	pointer-events: none;
+}
+
+@media (min-width: 576px) {
+	.nav-link {
+		width: auto;
+		border: none !important;
+		padding: 15px 15px;
+		text-transform: uppercase;
+		color: $blue-300;
+
+		border-radius: 5px;
+		margin-right: 5px;
+		background-color: $blue-900;
+	}
+
+	.menu-link-text {
+		display: none;
+	}
+
+	.nav-link .icon {
+		margin: 0;
+		font-size: 18px;
+	}
+}
+
+@media (min-width: 996px) {
+	.nav-link {
+		background-color: white;
+		padding: 8px 12px;
+		font-size: 12px;
+	}
+
+	.menu-link-text {
+		display: block;
+	}
+
+	.nav-link .icon {
+		margin-right: 10px;
+		font-size: 12px;
+	}
+}

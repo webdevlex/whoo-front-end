@@ -1,0 +1,140 @@
+@mixin fill-screen {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+// ---------------- Flex Row ----------------
+@mixin justify-center-row {
+	display: flex;
+	justify-content: center;
+}
+
+@mixin align-center-row {
+	display: flex;
+	align-items: center;
+}
+
+@mixin justify-align-center-row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+// ---------------- Flex Column ----------------
+@mixin justify-center-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-direction: column;
+}
+
+@mixin align-center-column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-direction: column;
+}
+
+@mixin justify-align-center-column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+// ---------------- Old ----------------
+
+@mixin center-elements {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin center-elements-horizontal {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+@mixin center-elements-virtical {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@mixin space-elements {
+	display: flex;
+	justify-content: space-between;
+	//align-items: center;
+}
+
+@mixin fill-wrapper {
+	width: 100%;
+	height: auto;
+}
+
+@mixin wrap-content {
+	width: auto;
+	height: auto;
+	width: fit-content;
+	height: fit-content;
+}
+
+@mixin wrap-height {
+	width: 100%;
+	height: auto;
+	height: fit-content;
+}
+
+@mixin btn-default {
+	width: auto;
+	height: 3rem;
+	margin: 1rem;
+	padding: 0rem 2rem;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-size: 1rem;
+
+	color: white;
+	background-color: red !important;
+	text-decoration: none;
+
+	border-radius: 50px;
+	white-space: nowrap;
+}
+
+@mixin btn-blank {
+	@include wrap-content;
+	margin: 1rem;
+
+	color: #ffffff;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+
+	white-space: nowrap;
+}
+
+@mixin custom-scroll-bar {
+}
+
+@mixin wrap-words {
+	/* These are technically the same, but use both */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+
+	-ms-word-break: break-all;
+	/* This is the dangerous one in WebKit, as it breaks things wherever */
+	word-break: break-all;
+	/* Instead use this non-standard one: */
+	word-break: break-word;
+
+	/* Adds a hyphen where the word breaks, if supported (No Blink) */
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+}
