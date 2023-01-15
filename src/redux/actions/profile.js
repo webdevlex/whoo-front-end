@@ -26,6 +26,10 @@ import {
 import axios from 'axios';
 import setDefaults from './defaults';
 
+if (process.env.NODE_ENV == 'production') {
+	axios.defaults.baseURL = 'https://whoo-back-end.onrender.com';
+}
+
 let clearAlertsTimeout = null;
 
 export const updateProfileImage = () => async (dispatch) => {
@@ -33,7 +37,6 @@ export const updateProfileImage = () => async (dispatch) => {
 		let res = await axios.get('/api/profile', {
 			params: { username: 'webdevlex' },
 		});
-		console.log(res.data.pictureUrl);
 
 		let body = {
 			url: res.data.pictureUrl,

@@ -17,6 +17,10 @@ import { setAlert } from '../actions/alert';
 import setAuthToken from '../../utils/setAuthToken';
 import { getMyProfile, clearAlerts } from './profile';
 
+if (process.env.NODE_ENV == 'production') {
+	axios.defaults.baseURL = 'https://whoo-back-end.onrender.com';
+}
+
 //
 export const loadUser = () => async (dispatch) => {
 	if (localStorage.token) {

@@ -8,7 +8,6 @@ import { loginUser } from '../../redux/actions/auth';
 
 function TestWebsite({ loginUser }) {
 	function handleTestClick() {
-		console.log('Test');
 		loginUser({
 			email: 'test@gmail.com',
 			password: 'Test123!',

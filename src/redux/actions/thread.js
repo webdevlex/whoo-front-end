@@ -13,6 +13,10 @@ import {
 } from './types';
 import axios from 'axios';
 
+if (process.env.NODE_ENV == 'production') {
+	axios.defaults.baseURL = 'https://whoo-back-end.onrender.com';
+}
+
 export const clearNewThread = () => (dispatch) => {
 	dispatch({
 		type: CLEAR_NEW_THREAD,

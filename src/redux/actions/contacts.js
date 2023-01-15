@@ -9,6 +9,10 @@ import {
 } from './types';
 import axios from 'axios';
 
+if (process.env.NODE_ENV == 'production') {
+	axios.defaults.baseURL = 'https://whoo-back-end.onrender.com';
+}
+
 let addContactTimeout = null;
 export const addUserAsContact = (username) => async (dispatch) => {
 	dispatch({

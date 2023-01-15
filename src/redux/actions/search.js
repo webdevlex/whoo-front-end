@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 import {
 	GETTING_SEARCH_RESULTS,
 	CLEAR_SEARCH_RESULTS,
@@ -8,6 +7,10 @@ import {
 	LOADING_SEARCH_RESULTS,
 	DONE_LOADING_SEARCH_RESULTS,
 } from './types';
+
+if (process.env.NODE_ENV == 'production') {
+	axios.defaults.baseURL = 'https://whoo-back-end.onrender.com';
+}
 
 export const clearSearch = () => (dispatch) => {
 	dispatch({
