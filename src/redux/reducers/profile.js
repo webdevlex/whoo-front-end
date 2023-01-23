@@ -20,6 +20,8 @@ import {
 	ADD_CONTACT_LOADING,
 	CLEAR_ADD_CONTACT_ALERT,
 	USERNAME_TAKEN_ERROR,
+	LOGIN_SUCCESS,
+	LOGIN_FAIL,
 } from '../actions/types';
 
 const initialState = {
@@ -145,6 +147,13 @@ export default function (state = initialState, action) {
 				...state,
 				saveProfileLoading: true,
 			};
+		case LOGIN_FAIL:
+		case LOGIN_SUCCESS:
+			return {
+				...state,
+				profileLoading: false,
+			};
+
 		case CONTACT_REMOVED_FAILED:
 		default:
 			return state;

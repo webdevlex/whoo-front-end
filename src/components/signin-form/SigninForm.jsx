@@ -6,11 +6,12 @@ import { FaEye } from 'react-icons/fa';
 import { connect } from 'react-redux';
 
 import './signin-form.scss';
+import spinner from '../../assets/images/loading-buffering.gif';
 import { loginUser } from '../../redux/actions/auth';
 import SignInAndUpErrors from '../sign-in-and-up-error/SignInAndUpErrors';
 import TestWebsite from '../test-website/TestWebsite';
 
-function SigninForm({ loginUser }) {
+function SigninForm({ loginUser, profileLoading }) {
 	const {
 		register,
 		handleSubmit,
@@ -112,12 +113,19 @@ function SigninForm({ loginUser }) {
 			<SignInAndUpErrors />
 			<input type='submit' className='sign-in-button' value='Sign In' />
 			<TestWebsite />
+			<div className='login-spinner'>
+				{profileLoading && <img src={spinner}></img>}
+			</div>
 		</form>
 	);
 }
+
+const mapStateToProps = (state) => ({
+	profileLoading: state.profile.profileLoading,
+});
 
 SigninForm.propTypes = {
 	loginUser: PropTypes.func.isRequired,
 };
 
-export default connect(null, { loginUser })(SigninForm);
+export default connect(mapStateToProps, { loginUser })(SigninForm);

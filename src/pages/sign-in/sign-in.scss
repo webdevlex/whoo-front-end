@@ -52,6 +52,11 @@
 	cursor: pointer;
 }
 
+.login-spinner{
+	width: 25px;
+	height: 25px;
+}
+
 @media (min-width: 576px) {
 	.sign-in-container {
 		border: 1px solid $blue-800;
