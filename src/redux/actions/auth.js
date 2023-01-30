@@ -12,6 +12,7 @@ import {
 	TOGGLE_MENU,
 	LOADING_MY_PROFILE,
 	DONE_LOADING_PROFILE,
+	LOGIN_ATTEMPT,
 } from './types';
 import { setAlert } from '../actions/alert';
 import setAuthToken from '../../utils/setAuthToken';
@@ -100,6 +101,9 @@ export const loginUser =
 	async (dispatch) => {
 		dispatch({
 			type: LOADING_MY_PROFILE,
+		});
+		dispatch({
+			type: LOGIN_ATTEMPT,
 		});
 
 		const header = {

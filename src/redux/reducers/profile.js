@@ -22,6 +22,7 @@ import {
 	USERNAME_TAKEN_ERROR,
 	LOGIN_SUCCESS,
 	LOGIN_FAIL,
+	LOGIN_ATTEMPT,
 } from '../actions/types';
 
 const initialState = {
@@ -30,6 +31,7 @@ const initialState = {
 	myUsername: '',
 	listProfiles: [],
 	profileLoading: true,
+	loginAttempt: false,
 	alerts: '',
 	error: '',
 	saveProfileLoading: false,
@@ -127,6 +129,11 @@ export default function (state = initialState, action) {
 				...state,
 				profileLoading: true,
 			};
+		case LOGIN_ATTEMPT:
+			return {
+				...state,
+				loginAttempt: true,
+			};
 		case HAS_PROFILE:
 			return {
 				...state,
@@ -152,6 +159,7 @@ export default function (state = initialState, action) {
 			return {
 				...state,
 				profileLoading: false,
+				loginAttempt: false,
 			};
 
 		case CONTACT_REMOVED_FAILED:

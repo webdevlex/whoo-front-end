@@ -11,7 +11,7 @@ import { loginUser } from '../../redux/actions/auth';
 import SignInAndUpErrors from '../sign-in-and-up-error/SignInAndUpErrors';
 import TestWebsite from '../test-website/TestWebsite';
 
-function SigninForm({ loginUser, profileLoading }) {
+function SigninForm({ loginUser, loginAttempt }) {
 	const {
 		register,
 		handleSubmit,
@@ -114,14 +114,14 @@ function SigninForm({ loginUser, profileLoading }) {
 			<input type='submit' className='sign-in-button' value='Sign In' />
 			<TestWebsite />
 			<div className='login-spinner'>
-				{profileLoading && <img src={spinner}></img>}
+				{loginAttempt && <img src={spinner}></img>}
 			</div>
 		</form>
 	);
 }
 
 const mapStateToProps = (state) => ({
-	profileLoading: state.profile.profileLoading,
+	loginAttempt: state.profile.loginAttempt,
 });
 
 SigninForm.propTypes = {
