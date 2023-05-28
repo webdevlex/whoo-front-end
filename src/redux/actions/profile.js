@@ -27,7 +27,7 @@ import axios from 'axios';
 import setDefaults from './defaults';
 
 if (process.env.NODE_ENV == 'production') {
-	axios.defaults.baseURL = 'https://whoo-back-end.onrender.com';
+	axios.defaults.baseURL = 'https://whoo-back-end-production.up.railway.app';
 }
 
 let clearAlertsTimeout = null;

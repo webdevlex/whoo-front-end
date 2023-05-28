@@ -19,7 +19,7 @@ import setAuthToken from '../../utils/setAuthToken';
 import { getMyProfile, clearAlerts } from './profile';
 
 if (process.env.NODE_ENV == 'production') {
-	axios.defaults.baseURL = 'https://whoo-back-end.onrender.com';
+	axios.defaults.baseURL = 'https://whoo-back-end-production.up.railway.app';
 }
 
 //
