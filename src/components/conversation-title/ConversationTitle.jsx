@@ -9,22 +9,23 @@ import MembersDropdown from '../members-dropdown/MembersDropdown';
 import UserImage from '../user-image/UserImage';
 
 function ConversationTitle({ thread, myProfile }) {
-	const { threads, selectedThread, newThreadProfiles } = thread;
+	const { threads, selectedThread, newThreadProfiles, sendingMessageLoading } =
+		thread;
 	const { contacts } = myProfile;
 	const selectedThreadIndex = threads.findIndex(
 		({ _id }) => _id === selectedThread
 	);
 
 	return (
-		<div className="conversation-title">
+		<div className='conversation-title'>
 			<MembersDropdown />
-			<div className="title-left">
-				<span className="recipient-text">To:</span>
+			<div className='title-left'>
+				<span className='recipient-text'>To:</span>
 				{selectedThread !== null &&
-					(selectedThread === 0
+					(selectedThread === 0 || sendingMessageLoading
 						? contacts.map(({ user, pictureUrl }) => {
 								return newThreadProfiles.includes(user) ? (
-									<div className="img-container" key={user}>
+									<div className='img-container' key={user}>
 										<UserImage src={pictureUrl} />
 									</div>
 								) : null;
@@ -32,7 +33,7 @@ function ConversationTitle({ thread, myProfile }) {
 						: threads[selectedThreadIndex].memberProfiles.map(
 								({ user, pictureUrl }) => {
 									return user !== myProfile.user ? (
-										<div className="img-container" key={user}>
+										<div className='img-container' key={user}>
 											<UserImage src={pictureUrl} />
 										</div>
 									) : null;
@@ -40,7 +41,7 @@ function ConversationTitle({ thread, myProfile }) {
 						  ))}
 			</div>
 
-			<div className="title-right">
+			<div className='title-right'>
 				{selectedThread === 0 ? <AddToConversationButton /> : null}
 			</div>
 		</div>

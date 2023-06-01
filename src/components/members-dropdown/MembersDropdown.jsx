@@ -23,16 +23,15 @@ function MembersDropdown({ thread, myProfile }) {
 	);
 
 	return (
-		<div className="members-dropdown-container">
+		<div className='members-dropdown-container'>
 			<button
-				type="button"
-				className="members-dropdown-button"
-				onClick={() => toggleDropDown()}
-			>
+				type='button'
+				className='members-dropdown-button'
+				onClick={() => toggleDropDown()}>
 				<FaAngleDown />
 			</button>
 			{membersDropDownOpen && (
-				<div className="members-dropdown">
+				<div className='members-dropdown'>
 					{selectedThread !== null &&
 						(selectedThread === 0
 							? contacts.map(
@@ -40,16 +39,15 @@ function MembersDropdown({ thread, myProfile }) {
 										return newThreadProfiles.includes(user) ? (
 											<Link
 												to={`/profile/${username}`}
-												className="member"
-												key={_id}
-											>
-												<div className="member-img-container">
+												className='member'
+												key={_id}>
+												<div className='member-img-container'>
 													<UserImage src={pictureUrl} />
 												</div>
 
-												<div className="member-info">
-													<p className="member-fullname">{fullName}</p>
-													<p className="member-username">@{username}</p>
+												<div className='member-info'>
+													<p className='member-fullname'>{fullName}</p>
+													<p className='member-username'>@{username}</p>
 												</div>
 											</Link>
 										) : null;
@@ -60,16 +58,15 @@ function MembersDropdown({ thread, myProfile }) {
 										return user !== myProfile.user ? (
 											<Link
 												to={`/profile/${username}`}
-												className="member"
-												key={_id}
-											>
-												<div className="member-img-container" key={user}>
+												className='member'
+												key={_id}>
+												<div className='member-img-container' key={user}>
 													<UserImage src={pictureUrl} />
 												</div>
 
-												<div className="member-info">
-													<p className="member-fullname">{fullName}</p>
-													<p className="member-username">@{username}</p>
+												<div className='member-info'>
+													<p className='member-fullname'>{fullName}</p>
+													<p className='member-username'>@{username}</p>
 												</div>
 											</Link>
 										) : null;

@@ -34,24 +34,22 @@ function Threads({ openDropdown }) {
 		<div
 			className={`threads ${
 				threadsMenuOpen && width < 576 ? 'threads-menu-open' : null
-			}`}
-		>
-			<div className="title-and-threads-container">
+			}`}>
+			<div className='title-and-threads-container'>
 				<ThreadTitle />
-				<div className="threads-container">
+				<div className='threads-container'>
 					<TempThread />
 					<RealThreads setThreadsMenuOpen={setThreadsMenuOpen} />
 				</div>
 			</div>
 			<button
-				type="button"
-				className="edit-profile-popout-menu-button"
-				onClick={handleThreadsMenuTabClick}
-			>
+				type='button'
+				className='edit-profile-popout-menu-button'
+				onClick={handleThreadsMenuTabClick}>
 				{threadsMenuOpen ? (
-					<FaAngleLeft className="icon" />
+					<FaAngleLeft className='icon' />
 				) : (
-					<FaAngleRight className="icon" />
+					<FaAngleRight className='icon' />
 				)}
 			</button>
 		</div>

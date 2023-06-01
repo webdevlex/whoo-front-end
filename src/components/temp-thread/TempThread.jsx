@@ -32,40 +32,37 @@ function TempThread({
 	return (
 		!threadsLoading &&
 		selectedThread === 0 && (
-			<div className="temp-thread selected">
-				<div className="left">
-					<div className="recipient-imgs">
+			<div className='temp-thread selected'>
+				<div className='left'>
+					<div className='recipient-imgs'>
 						{currentUserContacts
 							.filter(({ user }) => newThreadProfiles.includes(user))
 							.map(({ pictureUrl, user }, index) => (
 								<div
 									key={user}
-									className="recipient-img"
-									style={{ left: index * 15, zIndex: index * -1 }}
-								>
+									className='recipient-img'
+									style={{ left: index * 15, zIndex: index * -1 }}>
 									<UserImage src={pictureUrl} />
 								</div>
 							))}
 					</div>
 
 					<p
-						className="recipient-name"
+						className='recipient-name'
 						style={{
 							marginLeft: `${50 + numberOfPeopleInNewThread * 15}px`,
-						}}
-					>
+						}}>
 						{`${newThreadNamesDisplay}${
 							newThreadNamesDisplayLength === 30 ? '...' : ''
 						}`}
 					</p>
 				</div>
-				<div className="right">
+				<div className='right'>
 					<button
-						className="cancel-new-message-button"
-						type="button"
-						onClick={() => handleCancelClick()}
-					>
-						<FaTrashAlt className="cancel-new-message-button-icon" />
+						className='cancel-new-message-button'
+						type='button'
+						onClick={() => handleCancelClick()}>
+						<FaTrashAlt className='cancel-new-message-button-icon' />
 					</button>
 				</div>
 			</div>

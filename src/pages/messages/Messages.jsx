@@ -35,7 +35,7 @@ function Messages({
 	}, []);
 
 	return (
-		<div className="messages-page">
+		<div className='messages-page'>
 			{profileLoading ? (
 				<Loading />
 			) : (

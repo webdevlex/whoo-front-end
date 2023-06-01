@@ -31,7 +31,7 @@ function ConversationMessages({ thread, myProfile }) {
 	return (
 		<div className='conversation'>
 			{!threadsLoading &&
-				threads[selectedThreadIndex].messages.map(
+				threads[selectedThreadIndex]?.messages.map(
 					(
 						{ _id, from, message, timeSent, fullName, username },
 						index,

@@ -17,7 +17,7 @@ function Conversation({ thread }) {
 	const conversation = (
 		<>
 			{selectedThread === 0 ? (
-				<div className="conversation" />
+				<div className='conversation' />
 			) : (
 				<ConversationMessages />
 			)}
@@ -25,15 +25,15 @@ function Conversation({ thread }) {
 	);
 
 	return (
-		<div className="conversations-container">
+		<div className='conversations-container'>
 			{selectedThread === null ? (
-				<div className="no-conversation-container">
+				<div className='no-conversation-container'>
 					<img
-						className="no-conversation-icon"
+						className='no-conversation-icon'
 						src={noConversationIcon}
-						alt="no conversation selected"
+						alt='no conversation selected'
 					/>
-					<p className="no-conversation-selected-text">
+					<p className='no-conversation-selected-text'>
 						No Coversation Selected
 					</p>
 				</div>

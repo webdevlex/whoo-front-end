@@ -40,22 +40,21 @@ function NewThreadButton({
 	return selectedThread === 0 ? null : (
 		<>
 			<button
-				type="button"
-				className="new-message-button"
-				onClick={() => onClick()}
-			>
+				type='button'
+				className='new-message-button'
+				onClick={() => onClick()}>
 				New Message
 			</button>
 
 			{dropdown === 'new-thread' && (
-				<div className="new-thread-dropdown">
-					<div className="search-bar">
-						<FaSearch className="icon" />
+				<div className='new-thread-dropdown'>
+					<div className='search-bar'>
+						<FaSearch className='icon' />
 						<input
 							onChange={(e) => handleChange(e)}
-							name="search"
-							type="text"
-							className="input"
+							name='search'
+							type='text'
+							className='input'
 						/>
 					</div>
 					{currentUserContacts.map(
@@ -66,16 +65,15 @@ function NewThreadButton({
 						}) => {
 							return contactFullName.includes(searchValue) ? (
 								<button
-									type="button"
-									className="dropdown-profile"
+									type='button'
+									className='dropdown-profile'
 									_id={contactId}
 									key={contactId}
-									onClick={(e) => addProfile(e)}
-								>
-									<div className="img-container">
+									onClick={(e) => addProfile(e)}>
+									<div className='img-container'>
 										<UserImage src={contactPictureUrl} />
 									</div>
-									<span className="profile-name">{contactFullName}</span>
+									<span className='profile-name'>{contactFullName}</span>
 								</button>
 							) : null;
 						}

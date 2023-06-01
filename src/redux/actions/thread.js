@@ -75,6 +75,7 @@ export const sendMessage =
 					jobTitle: res.data.basics.jobTitle,
 				});
 			}
+
 			const body = JSON.stringify(newMessage);
 			const res = await axios.post('/api/thread', body, header);
 			dispatch(getMyMessages());
