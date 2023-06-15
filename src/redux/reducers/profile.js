@@ -23,6 +23,7 @@ import {
 	LOGIN_SUCCESS,
 	LOGIN_FAIL,
 	LOGIN_ATTEMPT,
+	LOGOUT_USER,
 } from '../actions/types';
 
 const initialState = {
@@ -161,7 +162,14 @@ export default function (state = initialState, action) {
 				profileLoading: false,
 				loginAttempt: false,
 			};
-
+		case LOGOUT_USER:
+			console.log('here');
+			return {
+				...state,
+				myProfile: {},
+				hasProfile: false,
+				myUsername: '',
+			};
 		case CONTACT_REMOVED_FAILED:
 		default:
 			return state;

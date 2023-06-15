@@ -9,28 +9,40 @@ import ComponentLoading from '../../components/component-loading/ComponentLoadin
 import Loading from '../../components/loading/Loading';
 import OnChangeSearchBar from '../../components/on-change-search-bar/OnChangeSearchBar';
 import ProfileDisplay from '../../components/profile-display/ProfileDisplay';
-import { getMyProfile } from '../../redux/actions/profile';
+import {
+	getMyProfile,
+	getAllProfilesFormatted,
+} from '../../redux/actions/profile';
 import { clearSearch } from '../../redux/actions/search';
 
-function Browse({ search, getMyProfile, clearSearch, profileLoading }) {
+function Browse({
+	profiles,
+	search,
+	getMyProfile,
+	clearSearch,
+	profileLoading,
+	getAllProfilesFormatted,
+	isAuthenticated,
+}) {
 	const { searchedUsersLoading, searchResults } = search;
 	const hasSearchResults = searchResults.length;
 
 	useEffect(() => {
 		getMyProfile();
+		getAllProfilesFormatted();
 		return () => {
 			clearSearch();
 		};
 	}, []);
 
 	return (
-		<div className="browse-page">
+		<div className='browse-page'>
 			{profileLoading ? (
 				<Loading />
 			) : (
 				<>
-					<div className="browse-title-and-search-bar-container">
-						<div className="title-text">Browse Users</div>
+					<div className='browse-title-and-search-bar-container'>
+						<div className='title-text'>Browse Users</div>
 						<OnChangeSearchBar />
 					</div>
 					{searchedUsersLoading ? (
@@ -39,23 +51,24 @@ function Browse({ search, getMyProfile, clearSearch, profileLoading }) {
 						// eslint-disable-next-line react/jsx-no-useless-fragment
 						<>
 							{hasSearchResults ? (
-								<div className="browse-unordered-list">
+								<div className='browse-unordered-list'>
 									{searchResults.map((profile) => (
 										<ProfileDisplay
 											key={profile.username}
 											userProfile={profile}
-											displayFriendButtons
+											displayFriendButtons={isAuthenticated}
 										/>
 									))}
 								</div>
 							) : (
-								<div className="no-results-container">
-									<img
-										className="no-search-results-svg"
-										src={noSearchResultsSvg}
-										alt="no results found"
-									/>
-									<span className="no-results-text">No Results Found...</span>
+								<div className='browse-unordered-list'>
+									{profiles.map((profile) => (
+										<ProfileDisplay
+											key={profile.username}
+											userProfile={profile}
+											displayFriendButtons={isAuthenticated}
+										/>
+									))}
 								</div>
 							)}
 						</>
@@ -68,7 +81,8 @@ function Browse({ search, getMyProfile, clearSearch, profileLoading }) {
 
 const mapStateToProps = (state) => ({
 	allProfilesLoading: state.allProfiles.allProfilesLoading,
-	profiles: state.allProfiles.profiles,
+	profiles: state.allProfiles.profilesFormatted,
+	isAuthenticated: state.auth.isAuthenticated,
 	search: state.search,
 	profileLoading: state.profile.profileLoading,
 });
@@ -77,10 +91,12 @@ Browse.propTypes = {
 	search: PropTypes.object.isRequired,
 	getMyProfile: PropTypes.func.isRequired,
 	clearSearch: PropTypes.func.isRequired,
+	getAllProfilesFormatted: PropTypes.func.isRequired,
 	profileLoading: PropTypes.bool.isRequired,
 };
 
 export default connect(mapStateToProps, {
 	getMyProfile,
 	clearSearch,
+	getAllProfilesFormatted,
 })(Browse);

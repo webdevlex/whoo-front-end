@@ -22,6 +22,8 @@ import {
 	SAVE_PROFILE_LOADING,
 	USERNAME_TAKEN_ERROR,
 	TEST_PROFILE_ERROR,
+	GET_ALL_PROFILES_FORMATTED,
+	GET_ALL_PROFILES_FORMATTED_FAIL,
 } from './types';
 import axios from 'axios';
 import setDefaults from './defaults';
@@ -146,6 +148,20 @@ export const getAllProfiles = () => async (dispatch) => {
 	} catch (err) {
 		dispatch({
 			type: GET_ALL_PROFILES_FAIL,
+		});
+	}
+};
+
+export const getAllProfilesFormatted = () => async (dispatch) => {
+	try {
+		const res = await axios.get('/api/profile/allFormatted');
+		dispatch({
+			type: GET_ALL_PROFILES_FORMATTED,
+			payload: res.data,
+		});
+	} catch (err) {
+		dispatch({
+			type: GET_ALL_PROFILES_FORMATTED_FAIL,
 		});
 	}
 };

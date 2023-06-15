@@ -132,6 +132,10 @@ function NavLinks({
 					<FaSearch className='icon' />
 					<span className='menu-link-text'>Search</span>
 				</Link>
+				<Link className='nav-link' to='/browse' onClick={(e) => handleClick(e)}>
+					<FaList className='icon' />
+					<span className='menu-link-text'>Browse</span>
+				</Link>
 				<Link
 					className='nav-link'
 					to='edit-profile'
@@ -139,7 +143,6 @@ function NavLinks({
 					<FaUserAlt className='icon' />
 					<span className='menu-link-text'>Create Profile</span>
 				</Link>
-
 				<button
 					type='button'
 					className='nav-link logout'
@@ -159,6 +162,10 @@ function NavLinks({
 				<Link className='nav-link' to='/search' onClick={(e) => handleClick(e)}>
 					<FaSearch className='icon' />
 					<span className='menu-link-text'>Search</span>
+				</Link>
+				<Link className='nav-link' to='/browse' onClick={(e) => handleClick(e)}>
+					<FaList className='icon' />
+					<span className='menu-link-text'>Browse</span>
 				</Link>
 				<Link className='nav-link' to='sign-in' onClick={(e) => handleClick(e)}>
 					<FaUserAlt className='icon' />
