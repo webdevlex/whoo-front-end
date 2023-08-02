@@ -10,11 +10,11 @@ import {
 	SET_DROPDOWN,
 	CLEAR_NEW_THREAD,
 	SENDING_MESSAGE_LOADING,
-} from './types';
-import axios from 'axios';
+} from "./types";
+import axios from "axios";
 
-if (process.env.NODE_ENV == 'production') {
-	axios.defaults.baseURL = 'https://whoo-back-end-production.up.railway.app';
+if (process.env.NODE_ENV == "production") {
+	axios.defaults.baseURL = "https://whoo-backend.cyclic.app";
 }
 
 export const clearNewThread = () => (dispatch) => {
@@ -49,7 +49,7 @@ export const sendMessage =
 		dispatch({ type: SENDING_MESSAGE_LOADING });
 		const header = {
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-Type": "application/json",
 			},
 		};
 
@@ -64,7 +64,7 @@ export const sendMessage =
 
 		try {
 			for (let i in recipients) {
-				const res = await axios.get('/api/profile/id', {
+				const res = await axios.get("/api/profile/id", {
 					params: { id: recipients[i] },
 				});
 				newMessage.memberProfiles.push({
@@ -77,7 +77,7 @@ export const sendMessage =
 			}
 
 			const body = JSON.stringify(newMessage);
-			const res = await axios.post('/api/thread', body, header);
+			const res = await axios.post("/api/thread", body, header);
 			dispatch(getMyMessages());
 			dispatch(setSelectedThread(res.data._id));
 			dispatch(clearNewThread());
@@ -97,7 +97,7 @@ export const sendDefaultMessage =
 		dispatch({ type: SENDING_MESSAGE_LOADING });
 		const header = {
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-Type": "application/json",
 			},
 		};
 
@@ -110,7 +110,7 @@ export const sendDefaultMessage =
 
 		try {
 			for (let i in recipients) {
-				const res = await axios.get('/api/profile/id', {
+				const res = await axios.get("/api/profile/id", {
 					params: { id: recipients[i] },
 				});
 				newMessage.memberProfiles.push({
@@ -122,7 +122,7 @@ export const sendDefaultMessage =
 				});
 			}
 			const body = JSON.stringify(newMessage);
-			const res = await axios.post('/api/thread/default', body, header);
+			const res = await axios.post("/api/thread/default", body, header);
 			dispatch(getMyMessages());
 			dispatch(setSelectedThread(res.data._id));
 			dispatch(clearNewThread());
@@ -143,7 +143,7 @@ export const getMyMessages = () => async (dispatch) => {
 	});
 
 	try {
-		let res = await axios.get('/api/thread');
+		let res = await axios.get("/api/thread");
 		dispatch({
 			type: MESSAGES_RETRIEVED,
 			payload: res.data,

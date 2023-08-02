@@ -6,11 +6,11 @@ import {
 	CONTACT_REMOVED_FAILED,
 	ADD_CONTACT_LOADING,
 	CLEAR_ADD_CONTACT_ALERT,
-} from './types';
-import axios from 'axios';
+} from "./types";
+import axios from "axios";
 
-if (process.env.NODE_ENV == 'production') {
-	axios.defaults.baseURL = 'https://whoo-back-end-production.up.railway.app';
+if (process.env.NODE_ENV == "production") {
+	axios.defaults.baseURL = "https://whoo-backend.cyclic.app";
 }
 
 let addContactTimeout = null;
@@ -21,12 +21,12 @@ export const addUserAsContact = (username) => async (dispatch) => {
 
 	const header = {
 		headers: {
-			'Content-Type': 'application/json',
+			"Content-Type": "application/json",
 		},
 	};
 	const body = JSON.stringify({ username: username });
 	try {
-		const res = await axios.post('/api/profile/add-contact', body, header);
+		const res = await axios.post("/api/profile/add-contact", body, header);
 		dispatch({
 			type: CONTACT_ADDED,
 			payload: res.data,
@@ -49,12 +49,12 @@ export const addUserAsContact = (username) => async (dispatch) => {
 export const removeContact = (username) => async (dispatch) => {
 	const header = {
 		headers: {
-			'Content-Type': 'application/json',
+			"Content-Type": "application/json",
 		},
 	};
 	const body = JSON.stringify({ username: username });
 	try {
-		const res = await axios.post('/api/profile/remove-contact', body, header);
+		const res = await axios.post("/api/profile/remove-contact", body, header);
 		dispatch({
 			type: CONTACT_REMOVED,
 			payload: res.data,

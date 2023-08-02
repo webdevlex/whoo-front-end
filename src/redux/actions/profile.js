@@ -24,20 +24,20 @@ import {
 	TEST_PROFILE_ERROR,
 	GET_ALL_PROFILES_FORMATTED,
 	GET_ALL_PROFILES_FORMATTED_FAIL,
-} from './types';
-import axios from 'axios';
-import setDefaults from './defaults';
+} from "./types";
+import axios from "axios";
+import setDefaults from "./defaults";
 
-if (process.env.NODE_ENV == 'production') {
-	axios.defaults.baseURL = 'https://whoo-back-end-production.up.railway.app';
+if (process.env.NODE_ENV == "production") {
+	axios.defaults.baseURL = "https://whoo-backend.cyclic.app";
 }
 
 let clearAlertsTimeout = null;
 
 export const updateProfileImage = () => async (dispatch) => {
 	try {
-		let res = await axios.get('/api/profile', {
-			params: { username: 'webdevlex' },
+		let res = await axios.get("/api/profile", {
+			params: { username: "webdevlex" },
 		});
 
 		let body = {
@@ -45,10 +45,10 @@ export const updateProfileImage = () => async (dispatch) => {
 		};
 		const header = {
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-Type": "application/json",
 			},
 		};
-		res = await axios.post('/api/profile/updateMessageProfiles', body, header);
+		res = await axios.post("/api/profile/updateMessageProfiles", body, header);
 	} catch (err) {
 		console.log(err);
 	}
@@ -69,7 +69,7 @@ export const clearAlerts = () => async (dispatch) => {
 
 export const getMyUsername = () => async (dispatch) => {
 	try {
-		const res = await axios.get('/api/profile/me');
+		const res = await axios.get("/api/profile/me");
 		dispatch({
 			type: USERNAME_RETRIEVED,
 			payload: res.data,
@@ -87,7 +87,7 @@ export const getMyProfile = () => async (dispatch) => {
 		type: LOADING_MY_PROFILE,
 	});
 	try {
-		const res = await axios.get('/api/profile/me');
+		const res = await axios.get("/api/profile/me");
 		dispatch({
 			type: MY_PROFILE_RETRIEVED,
 			payload: res.data,
@@ -111,7 +111,7 @@ export const getProfile = (username) => async (dispatch) => {
 	});
 
 	try {
-		const res = await axios.get('/api/profile', {
+		const res = await axios.get("/api/profile", {
 			params: { username: username },
 		});
 
@@ -126,7 +126,7 @@ export const getProfile = (username) => async (dispatch) => {
 	}
 
 	try {
-		await axios.get('/api/profile/me');
+		await axios.get("/api/profile/me");
 		dispatch({
 			type: HAS_PROFILE,
 		});
@@ -140,7 +140,7 @@ export const getProfile = (username) => async (dispatch) => {
 
 export const getAllProfiles = () => async (dispatch) => {
 	try {
-		const res = await axios.get('/api/profile/all');
+		const res = await axios.get("/api/profile/all");
 		dispatch({
 			type: GET_ALL_PROFILES,
 			payload: res.data,
@@ -154,7 +154,7 @@ export const getAllProfiles = () => async (dispatch) => {
 
 export const getAllProfilesFormatted = () => async (dispatch) => {
 	try {
-		const res = await axios.get('/api/profile/allFormatted');
+		const res = await axios.get("/api/profile/allFormatted");
 		dispatch({
 			type: GET_ALL_PROFILES_FORMATTED,
 			payload: res.data,
@@ -168,7 +168,7 @@ export const getAllProfilesFormatted = () => async (dispatch) => {
 
 export const deleteProfile = () => async (dispatch) => {
 	try {
-		await axios.delete('/api/profile');
+		await axios.delete("/api/profile");
 		dispatch({
 			type: PROFILE_DELETED,
 		});
@@ -198,30 +198,30 @@ export const saveProfilePicture = (picture) => async (dispatch) => {
 		let body = {};
 		let header = {
 			headers: {
-				'Content-Type': '',
+				"Content-Type": "",
 			},
 		};
 		let res;
 
 		if (picture) {
 			// get secure url from our express server
-			res = await axios.get('/api/s3');
+			res = await axios.get("/api/s3");
 			let url = res.data;
 
 			// post the image to s3
-			header.headers['Content-Type'] = 'multipart/form-data';
+			header.headers["Content-Type"] = "multipart/form-data";
 			body = picture;
 			await axios.put(url, body, header);
-			let imageUrl = url.split('?')[0];
+			let imageUrl = url.split("?")[0];
 
 			// post url to user profile
 			body = JSON.stringify({ pictureUrl: imageUrl });
 		} else {
-			body = JSON.stringify({ pictureUrl: '' });
+			body = JSON.stringify({ pictureUrl: "" });
 		}
-		header.headers['Content-Type'] = 'application/json';
+		header.headers["Content-Type"] = "application/json";
 
-		res = await axios.post('/api/profile/picture', body, header);
+		res = await axios.post("/api/profile/picture", body, header);
 		dispatch({
 			type: PROFILE_SAVED,
 			payload: res.data,
@@ -243,49 +243,49 @@ export const saveProfile = (formData, formName) => async (dispatch) => {
 	dispatch({ type: SAVE_PROFILE_LOADING });
 	const header = {
 		headers: {
-			'Content-Type': 'application/json',
+			"Content-Type": "application/json",
 		},
 	};
 
 	const body = JSON.stringify(formData);
-	let endPoint = '';
+	let endPoint = "";
 
 	switch (formName) {
-		case 'create':
-			endPoint = '/api/profile/create';
+		case "create":
+			endPoint = "/api/profile/create";
 			break;
-		case 'contact':
-			endPoint = '/api/profile/contact';
+		case "contact":
+			endPoint = "/api/profile/contact";
 			break;
-		case 'projects':
-			endPoint = '/api/profile/projects';
+		case "projects":
+			endPoint = "/api/profile/projects";
 			break;
-		case 'work':
-			endPoint = '/api/profile/work';
+		case "work":
+			endPoint = "/api/profile/work";
 			break;
-		case 'education':
-			endPoint = '/api/profile/education';
+		case "education":
+			endPoint = "/api/profile/education";
 			break;
-		case 'socials':
-			endPoint = '/api/profile/socials';
+		case "socials":
+			endPoint = "/api/profile/socials";
 			break;
-		case 'interests':
-			endPoint = '/api/profile/interests';
+		case "interests":
+			endPoint = "/api/profile/interests";
 			break;
-		case 'awards':
-			endPoint = '/api/profile/awards';
+		case "awards":
+			endPoint = "/api/profile/awards";
 			break;
-		case 'publications':
-			endPoint = '/api/profile/publications';
+		case "publications":
+			endPoint = "/api/profile/publications";
 			break;
-		case 'volunteer':
-			endPoint = '/api/profile/volunteer';
+		case "volunteer":
+			endPoint = "/api/profile/volunteer";
 			break;
-		case 'references':
-			endPoint = '/api/profile/references';
+		case "references":
+			endPoint = "/api/profile/references";
 			break;
-		case 'languages':
-			endPoint = '/api/profile/languages';
+		case "languages":
+			endPoint = "/api/profile/languages";
 			break;
 	}
 
@@ -295,7 +295,7 @@ export const saveProfile = (formData, formName) => async (dispatch) => {
 			type: PROFILE_SAVED,
 			payload: res.data,
 		});
-		if (formName === 'create') {
+		if (formName === "create") {
 			dispatch(getMyProfile());
 			dispatch(setDefaults());
 		}

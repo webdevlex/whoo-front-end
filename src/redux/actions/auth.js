@@ -1,5 +1,5 @@
 /* eslint-disable */
-import axios from 'axios';
+import axios from "axios";
 import {
 	REGISTER_SUCCESS,
 	REGISTER_FAIL,
@@ -13,13 +13,13 @@ import {
 	LOADING_MY_PROFILE,
 	DONE_LOADING_PROFILE,
 	LOGIN_ATTEMPT,
-} from './types';
-import { setAlert } from '../actions/alert';
-import setAuthToken from '../../utils/setAuthToken';
-import { getMyProfile, clearAlerts } from './profile';
+} from "./types";
+import { setAlert } from "../actions/alert";
+import setAuthToken from "../../utils/setAuthToken";
+import { getMyProfile, clearAlerts } from "./profile";
 
-if (process.env.NODE_ENV == 'production') {
-	axios.defaults.baseURL = 'https://whoo-back-end-production.up.railway.app';
+if (process.env.NODE_ENV == "production") {
+	axios.defaults.baseURL = "https://whoo-backend.cyclic.app";
 }
 
 //
@@ -29,7 +29,7 @@ export const loadUser = () => async (dispatch) => {
 	}
 
 	try {
-		const res = await axios.get('/api/auth');
+		const res = await axios.get("/api/auth");
 		dispatch({
 			type: USER_LOADED,
 			payload: res.data,
@@ -47,7 +47,7 @@ export const registerUser =
 	async (dispatch) => {
 		const header = {
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-Type": "application/json",
 			},
 		};
 
@@ -60,14 +60,14 @@ export const registerUser =
 
 		try {
 			// Make request and save response
-			const res = await axios.post('/api/users', body, header);
+			const res = await axios.post("/api/users", body, header);
 
 			// Clear old alerts
 			dispatch({
 				type: REMOVE_ALERT,
 			});
 			// On success setAlert called with success
-			dispatch(setAlert('Register successful!', 'success'));
+			dispatch(setAlert("Register successful!", "success"));
 
 			// If everything went well then dispatch a REGISTER_SUCESS message and pass along token to state
 			dispatch({
@@ -87,7 +87,7 @@ export const registerUser =
 			// users route responds with errors array on any failure, setAlerts action called with all errors
 			const errors = err.response.data.errors;
 			if (errors) {
-				errors.forEach((error) => dispatch(setAlert(error.msg, 'error')));
+				errors.forEach((error) => dispatch(setAlert(error.msg, "error")));
 			}
 			dispatch({
 				type: REGISTER_FAIL,
@@ -108,7 +108,7 @@ export const loginUser =
 
 		const header = {
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-Type": "application/json",
 			},
 		};
 
@@ -120,14 +120,14 @@ export const loginUser =
 
 		try {
 			// Make request and save response
-			const res = await axios.post('/api/auth', body, header);
+			const res = await axios.post("/api/auth", body, header);
 
 			// Clear old alerts
 			dispatch({
 				type: REMOVE_ALERT,
 			});
 			// On success setAlert called with success
-			dispatch(setAlert('Login successful!', 'success'));
+			dispatch(setAlert("Login successful!", "success"));
 
 			// If everything went well then dispatch a REGISTER_SUCESS message and pass along token to state
 			dispatch({
@@ -147,7 +147,7 @@ export const loginUser =
 			// users route responds with errors array on any failure, setAlerts action called with all errors
 			const errors = err.response.data.errors;
 			if (errors) {
-				errors.forEach((error) => dispatch(setAlert(error.msg, 'error')));
+				errors.forEach((error) => dispatch(setAlert(error.msg, "error")));
 			}
 			dispatch({
 				type: LOGIN_FAIL,

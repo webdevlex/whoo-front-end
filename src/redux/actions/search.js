@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import {
 	GETTING_SEARCH_RESULTS,
 	CLEAR_SEARCH_RESULTS,
@@ -6,10 +6,10 @@ import {
 	SETTING_SEARCH_VALUE,
 	LOADING_SEARCH_RESULTS,
 	DONE_LOADING_SEARCH_RESULTS,
-} from './types';
+} from "./types";
 
-if (process.env.NODE_ENV == 'production') {
-	axios.defaults.baseURL = 'https://whoo-back-end-production.up.railway.app';
+if (process.env.NODE_ENV == "production") {
+	axios.defaults.baseURL = "https://whoo-backend.cyclic.app";
 }
 
 export const clearSearch = () => (dispatch) => {
@@ -29,7 +29,7 @@ export const typeRequest = (formData) => async (dispatch) => {
 	dispatch({ type: LOADING_SEARCH_RESULTS });
 	try {
 		if (formData) {
-			const res = await axios.get('/api/profile/search', {
+			const res = await axios.get("/api/profile/search", {
 				params: { search: formData },
 			});
 			dispatch({
