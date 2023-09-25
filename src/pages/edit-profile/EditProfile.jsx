@@ -1,32 +1,33 @@
 /* eslint-disable */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-import './edit-profile.scss';
-import Loading from '../../components/loading/Loading';
-import { setOnEditProfilePage } from '../../redux/actions/navigation';
+import "./edit-profile.scss";
+import Loading from "../../components/loading/Loading";
+import { setOnEditProfilePage } from "../../redux/actions/navigation";
 import {
 	clearAlerts,
 	getMyProfile,
 	saveProfile,
 	saveProfilePicture,
-} from '../../redux/actions/profile';
-import CreateProfile from '../../components/create-profile/CreateProfile';
-import EditAwards from '../../components/edit-awards/EditAwards';
-import EditContact from '../../components/edit-contact/EditContact';
-import EditEducation from '../../components/edit-education/EditEducation';
-import EditInterests from '../../components/edit-interests/EditInterests';
-import EditLanguages from '../../components/edit-languages/EditLanguages';
-import EditMenu from '../../components/edit-menu/EditMenu';
-import EditProfilePicture from '../../components/edit-profile-picture/EditProfilePicture';
-import EditPublications from '../../components/edit-publications/EditPublications';
-import EditReferences from '../../components/edit-references/EditReferences';
-import EditSocials from '../../components/edit-socials/EditSocials';
-import EditVolunteer from '../../components/edit-volunteer/EditVolunteer';
-import EditWork from '../../components/edit-work/EditWork';
-import EditProjects from '../../components/edit-projects/EditProjects';
+} from "../../redux/actions/profile";
+import CreateProfile from "../../components/create-profile/CreateProfile";
+import EditAwards from "../../components/edit-awards/EditAwards";
+import EditContact from "../../components/edit-contact/EditContact";
+import EditEducation from "../../components/edit-education/EditEducation";
+import EditInterests from "../../components/edit-interests/EditInterests";
+import EditLanguages from "../../components/edit-languages/EditLanguages";
+import EditMenu from "../../components/edit-menu/EditMenu";
+import EditProfilePicture from "../../components/edit-profile-picture/EditProfilePicture";
+import EditPublications from "../../components/edit-publications/EditPublications";
+import EditReferences from "../../components/edit-references/EditReferences";
+import EditSocials from "../../components/edit-socials/EditSocials";
+import EditVolunteer from "../../components/edit-volunteer/EditVolunteer";
+import EditWork from "../../components/edit-work/EditWork";
+import EditProjects from "../../components/edit-projects/EditProjects";
 
 function EditProfile({
 	isLoading,
@@ -51,10 +52,13 @@ function EditProfile({
 	}, []);
 
 	const { myProfile, saveProfileLoading } = profile;
-	const [selected, setSelected] = useState('edit-contact');
+	const [selected, setSelected] = useState("edit-contact");
 
 	const displayEditProfilePage = (
 		<>
+			<Helmet>
+				<title>Whoo - Profile</title>
+			</Helmet>
 			<EditMenu selected={selected} setSelected={setSelected} />
 			<div className="inputs-container">
 				<EditProfilePicture

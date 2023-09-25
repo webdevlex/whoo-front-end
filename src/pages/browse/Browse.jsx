@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
-import './browse.scss';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import "./browse.scss";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-import noSearchResultsSvg from '../../assets/images/no-search-results.svg';
-import ComponentLoading from '../../components/component-loading/ComponentLoading';
-import Loading from '../../components/loading/Loading';
-import OnChangeSearchBar from '../../components/on-change-search-bar/OnChangeSearchBar';
-import ProfileDisplay from '../../components/profile-display/ProfileDisplay';
+import ComponentLoading from "../../components/component-loading/ComponentLoading";
+import Loading from "../../components/loading/Loading";
+import OnChangeSearchBar from "../../components/on-change-search-bar/OnChangeSearchBar";
+import ProfileDisplay from "../../components/profile-display/ProfileDisplay";
 import {
 	getMyProfile,
 	getAllProfilesFormatted,
-} from '../../redux/actions/profile';
-import { clearSearch } from '../../redux/actions/search';
+} from "../../redux/actions/profile";
+import { clearSearch } from "../../redux/actions/search";
 
 function Browse({
 	profiles,
@@ -36,13 +36,16 @@ function Browse({
 	}, []);
 
 	return (
-		<div className='browse-page'>
+		<div className="browse-page">
+			<Helmet>
+				<title>Whoo - Browse</title>
+			</Helmet>
 			{profileLoading ? (
 				<Loading />
 			) : (
 				<>
-					<div className='browse-title-and-search-bar-container'>
-						<div className='title-text'>Browse Users</div>
+					<div className="browse-title-and-search-bar-container">
+						<div className="title-text">Browse Users</div>
 						<OnChangeSearchBar />
 					</div>
 					{searchedUsersLoading ? (
@@ -51,7 +54,7 @@ function Browse({
 						// eslint-disable-next-line react/jsx-no-useless-fragment
 						<>
 							{hasSearchResults ? (
-								<div className='browse-unordered-list'>
+								<div className="browse-unordered-list">
 									{searchResults.map((profile) => (
 										<ProfileDisplay
 											key={profile.username}
@@ -61,7 +64,7 @@ function Browse({
 									))}
 								</div>
 							) : (
-								<div className='browse-unordered-list'>
+								<div className="browse-unordered-list">
 									{profiles.map((profile) => (
 										<ProfileDisplay
 											key={profile.username}

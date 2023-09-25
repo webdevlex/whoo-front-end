@@ -1,19 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-import './messages.scss';
-import Conversation from '../../components/conversation/Conversation';
-import Loading from '../../components/loading/Loading';
-import Threads from '../../components/threads/Threads';
-import { setOnEditProfilePage } from '../../redux/actions/navigation';
-import { getMyProfile } from '../../redux/actions/profile';
+import "./messages.scss";
+import Conversation from "../../components/conversation/Conversation";
+import Loading from "../../components/loading/Loading";
+import Threads from "../../components/threads/Threads";
+import { setOnEditProfilePage } from "../../redux/actions/navigation";
+import { getMyProfile } from "../../redux/actions/profile";
 import {
 	getMyMessages,
 	setSelectedThread,
 	clearNewThread,
-} from '../../redux/actions/thread';
+} from "../../redux/actions/thread";
 
 function Messages({
 	profileLoading,
@@ -35,7 +36,10 @@ function Messages({
 	}, []);
 
 	return (
-		<div className='messages-page'>
+		<div className="messages-page">
+			<Helmet>
+				<title>Whoo - Messeger</title>
+			</Helmet>
 			{profileLoading ? (
 				<Loading />
 			) : (

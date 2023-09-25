@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Link, Navigate } from 'react-router-dom';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { Link, Navigate } from "react-router-dom";
 
-import './sign-in.scss';
-import logo from '../../assets/images/whoo-logo-with-text.svg';
-import SigninForm from '../../components/signin-form/SigninForm';
-import { clearAlerts } from '../../redux/actions/alert';
+import "./sign-in.scss";
+import logo from "../../assets/images/whoo-logo-with-text.svg";
+import SigninForm from "../../components/signin-form/SigninForm";
+import { clearAlerts } from "../../redux/actions/alert";
 
 function SignIn({ isAuthenticated, isLoading, clearAlerts }) {
 	useEffect(() => {
@@ -17,23 +18,26 @@ function SignIn({ isAuthenticated, isLoading, clearAlerts }) {
 	}, []);
 
 	if (!isLoading && isAuthenticated) {
-		return <Navigate to='/edit-profile' />;
+		return <Navigate to="/edit-profile" />;
 	}
 
 	return (
-		<div className='sign-in-page'>
-			<div className='sign-in-container'>
-				<img className='sign-in-logo' src={logo} alt='companylogo' />
-				<h1 className='sign-in-title'>Welcome Back</h1>
-				<span className='sign-in-sub-title'>
+		<div className="sign-in-page">
+			<Helmet>
+				<title>Whoo - Sign In</title>
+			</Helmet>
+			<div className="sign-in-container">
+				<img className="sign-in-logo" src={logo} alt="companylogo" />
+				<h1 className="sign-in-title">Welcome Back</h1>
+				<span className="sign-in-sub-title">
 					Sign in to stay updated on your <br />
 					professional world.
 				</span>
 
 				<SigninForm />
-				<span className='not-member-text'>
+				<span className="not-member-text">
 					Not a member?&nbsp;
-					<Link className='link' to='/sign-up'>
+					<Link className="link" to="/sign-up">
 						Create Account.
 					</Link>
 				</span>

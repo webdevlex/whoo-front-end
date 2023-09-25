@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
-import './contacts.scss';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import "./contacts.scss";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-import noContactsSvg from '../../assets/images/no-contacts-icon.svg';
-import ContactsSearchBar from '../../components/contacts-search-bar/ContactsSearchBar';
-import Loading from '../../components/loading/Loading';
-import ProfileDisplay from '../../components/profile-display/ProfileDisplay';
-import { getMyProfile } from '../../redux/actions/profile';
+import noContactsSvg from "../../assets/images/no-contacts-icon.svg";
+import ContactsSearchBar from "../../components/contacts-search-bar/ContactsSearchBar";
+import Loading from "../../components/loading/Loading";
+import ProfileDisplay from "../../components/profile-display/ProfileDisplay";
+import { getMyProfile } from "../../redux/actions/profile";
 
 function Contacts({ profile, getMyProfile }) {
-	const [searchValue, setSearchValue] = useState('');
+	const [searchValue, setSearchValue] = useState("");
 	const { profileLoading } = profile;
 	const myProfile = profile.myProfile || {};
 	const currentUserContacts = myProfile.contacts || [];
@@ -24,6 +25,9 @@ function Contacts({ profile, getMyProfile }) {
 
 	return (
 		<div className="contacts-page">
+			<Helmet>
+				<title>Whoo - Contacts</title>
+			</Helmet>
 			{profileLoading ? (
 				<Loading />
 			) : (

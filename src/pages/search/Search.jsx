@@ -1,15 +1,16 @@
 /* eslint-disable */
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-import './search.scss';
-import logo from '../../assets/images/whoo-logo-with-text.svg';
-import OnChangeSearchBar from '../../components/on-change-search-bar/OnChangeSearchBar';
-import { getMyProfile } from '../../redux/actions/profile';
-import { clearSearch } from '../../redux/actions/search';
-import DisplayOnChangeSearchBarResults from '../../components/display-on-change-search-bar-results/DisplayOnChangeSearchBarResults';
+import "./search.scss";
+import logo from "../../assets/images/whoo-logo-with-text.svg";
+import OnChangeSearchBar from "../../components/on-change-search-bar/OnChangeSearchBar";
+import { getMyProfile } from "../../redux/actions/profile";
+import { clearSearch } from "../../redux/actions/search";
+import DisplayOnChangeSearchBarResults from "../../components/display-on-change-search-bar-results/DisplayOnChangeSearchBarResults";
 
 function Search({ clearSearch, getMyProfile }) {
 	useEffect(() => {
@@ -19,6 +20,9 @@ function Search({ clearSearch, getMyProfile }) {
 
 	return (
 		<div className="search-page">
+			<Helmet>
+				<title>Whoo - Search</title>
+			</Helmet>
 			<div className="search-page-elements-container">
 				<img className="search-page-logo" type="image" src={logo} alt="logo" />
 				<div className="search-bar-wrapper">
