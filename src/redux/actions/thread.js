@@ -14,7 +14,7 @@ import {
 import axios from "axios";
 
 if (process.env.NODE_ENV == "production") {
-	axios.defaults.baseURL = "https://whoo-backend.cyclic.app";
+	axios.defaults.baseURL = "https://whoo-back-end-production.up.railway.app";
 }
 
 export const clearNewThread = () => (dispatch) => {
